@@ -1,0 +1,325 @@
+/* ========================================
+   本アプリ — GitHub Pages 共通スタイル
+   フォレストグリーン基調・レスポンシブ対応
+   ======================================== */
+
+:root {
+  --color-primary: #1b4332;
+  --color-primary-dark: #081c15;
+  --color-primary-light: #2d6a4f;
+  --color-accent: #40916c;
+  --color-bg: #f8f9f8;
+  --color-surface: #ffffff;
+  --color-text: #1a1a1a;
+  --color-text-muted: #4a5568;
+  --color-border: #e2e8e4;
+  --color-footer-bg: #1b4332;
+  --color-footer-text: #d8f3dc;
+  --max-width: 720px;
+  --header-height: 64px;
+  --radius: 8px;
+  --shadow: 0 1px 3px rgba(27, 67, 50, 0.08);
+  --shadow-hover: 0 4px 12px rgba(27, 67, 50, 0.12);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Noto Sans JP",
+    Meiryo, sans-serif;
+  line-height: 1.75;
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ---------- Header ---------- */
+
+.site-header {
+  background-color: var(--color-primary);
+  color: #fff;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 8px rgba(8, 28, 21, 0.2);
+}
+
+.header-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: var(--header-height);
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.site-brand {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: #fff;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+
+.site-brand:hover {
+  color: #d8f3dc;
+}
+
+.site-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 1rem;
+  list-style: none;
+}
+
+.site-nav a {
+  color: rgba(255, 255, 255, 0.88);
+  text-decoration: none;
+  font-size: 0.875rem;
+  padding: 0.25rem 0;
+  border-bottom: 2px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+
+.site-nav a:hover,
+.site-nav a[aria-current="page"] {
+  color: #fff;
+  border-bottom-color: #95d5b2;
+}
+
+/* ---------- Main ---------- */
+
+.site-main {
+  flex: 1;
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 2rem 1.25rem 3rem;
+}
+
+.page-title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--color-primary-dark);
+  margin-bottom: 0.75rem;
+  line-height: 1.35;
+}
+
+.page-lead {
+  color: var(--color-text-muted);
+  margin-bottom: 2rem;
+  font-size: 1rem;
+}
+
+.content-body {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 1.75rem 1.5rem;
+  box-shadow: var(--shadow);
+}
+
+.content-body p {
+  margin-bottom: 1rem;
+  color: var(--color-text);
+}
+
+.content-body p:last-child {
+  margin-bottom: 0;
+}
+
+.content-body ul {
+  margin: 1rem 0 1.25rem 1.25rem;
+  color: var(--color-text);
+}
+
+.content-body li {
+  margin-bottom: 0.5rem;
+}
+
+.content-body li:last-child {
+  margin-bottom: 0;
+}
+
+.updated-date {
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--color-border);
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+}
+
+.notice {
+  margin-top: 1.25rem;
+  padding: 0.875rem 1rem;
+  background-color: #f0faf4;
+  border-left: 3px solid var(--color-accent);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  font-size: 0.9375rem;
+  color: var(--color-primary-dark);
+}
+
+.email-display {
+  display: inline-block;
+  margin: 0.75rem 0 1.25rem;
+  font-size: 1.0625rem;
+  font-weight: 600;
+  color: var(--color-primary-light);
+  text-decoration: none;
+  word-break: break-all;
+}
+
+.email-display:hover {
+  text-decoration: underline;
+  color: var(--color-primary);
+}
+
+.section-heading {
+  font-size: 1.0625rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  margin: 1.5rem 0 0.75rem;
+}
+
+/* ---------- Link cards (index) ---------- */
+
+.card-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.875rem;
+}
+
+.card-link {
+  display: block;
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 1.25rem 1.5rem;
+  text-decoration: none;
+  color: var(--color-primary-dark);
+  font-weight: 600;
+  font-size: 1.0625rem;
+  box-shadow: var(--shadow);
+  transition: border-color 0.15s, box-shadow 0.15s, transform 0.15s;
+  position: relative;
+}
+
+.card-link::after {
+  content: "→";
+  position: absolute;
+  right: 1.25rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--color-accent);
+  font-weight: 400;
+}
+
+.card-link:hover {
+  border-color: var(--color-accent);
+  box-shadow: var(--shadow-hover);
+  transform: translateY(-1px);
+  color: var(--color-primary);
+}
+
+/* ---------- Button ---------- */
+
+.btn {
+  display: inline-block;
+  margin-top: 1.5rem;
+  padding: 0.75rem 1.5rem;
+  background-color: var(--color-primary);
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9375rem;
+  border-radius: var(--radius);
+  border: none;
+  transition: background-color 0.15s;
+  text-align: center;
+}
+
+.btn:hover {
+  background-color: var(--color-primary-light);
+  color: #fff;
+}
+
+/* ---------- Footer ---------- */
+
+.site-footer {
+  background-color: var(--color-footer-bg);
+  color: var(--color-footer-text);
+  padding: 2rem 1.25rem;
+  margin-top: auto;
+}
+
+.footer-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  font-size: 0.875rem;
+  line-height: 1.8;
+}
+
+.footer-inner a {
+  color: #95d5b2;
+  text-decoration: none;
+}
+
+.footer-inner a:hover {
+  text-decoration: underline;
+  color: #fff;
+}
+
+.footer-copyright {
+  margin-top: 0.75rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid rgba(149, 213, 178, 0.25);
+  color: rgba(216, 243, 220, 0.7);
+  font-size: 0.8125rem;
+}
+
+/* ---------- Responsive ---------- */
+
+@media (min-width: 480px) {
+  .card-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 560px) {
+  .header-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    padding-top: 0.875rem;
+    padding-bottom: 0.875rem;
+  }
+
+  .site-nav {
+    width: 100%;
+    gap: 0.5rem 1rem;
+  }
+
+  .page-title {
+    font-size: 1.5rem;
+  }
+
+  .content-body {
+    padding: 1.25rem 1rem;
+  }
+}
